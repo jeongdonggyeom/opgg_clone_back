@@ -4,19 +4,18 @@ import com.example.opgg.Entity.UserEntity;
 import com.example.opgg.dto.UserDTO;
 import com.example.opgg.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-
-@Controller
+@RestController
 public class UserController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping(value = "/user/new")
+    @GetMapping(value = "/user/list")
     public String newUserForm(){
-        return "/register";
+        return "/user/list";
     }
 
     @PostMapping("/user/create")
